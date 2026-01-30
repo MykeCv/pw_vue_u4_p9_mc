@@ -1,7 +1,6 @@
 <template>
   <div class="todos-container">
     <ConsultarTodos/>
-    <h1>MATRICULAS</h1>
   </div>
 </template>
 

@@ -1,7 +1,6 @@
 <template>
   <div class="id-container">
     <ConsultarPorID/>
-    <h1>MATRICULAS</h1>
   </div>
 </template>
 

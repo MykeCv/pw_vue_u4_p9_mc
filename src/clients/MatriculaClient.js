@@ -19,7 +19,7 @@ const guardar = async (body) => {
         apellido: 'Cevallos'
     }*/
 
-    axios.post(`http://localhost:8081/matricula/api/v1.0/estudiantes`, body).then(r => r.data);
+    const data = axios.post(`http://localhost:8081/matricula/api/v1.0/estudiantes`, body).then(r => r.data);
     console.log(data);
     return data;
 }

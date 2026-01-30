@@ -2,8 +2,13 @@
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
-    <router-link to="/">ConsultarTodos</router-link> |
-    <router-link to="/">ConsultarPorID</router-link> |
+    <router-link to="/consultartodos">ConsultarTodos</router-link> |
+    <router-link to="/consultarPorId">ConsultarPorID</router-link> |
+    <router-link to="/guardar">Guardar</router-link> |
+    <router-link to="/actualizar">Actualizar</router-link> |
+    <router-link to="/actualizarParcial">Actualizar Parcial</router-link> |
+    <router-link to="/borrar">Borrar</router-link>
+    
   </nav>
   <router-view/>
 </template>
