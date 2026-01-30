@@ -1,0 +1,16 @@
+<template>
+  <div class="actualizarParcial-container">
+    <ActualizarParcial/>
+  </div>
+</template>
+
+<script>
+import ActualizarParcial from '@/components/ActualizarParcial.vue';
+export default {
+  components: {
+    ActualizarParcial,
+  }
+
+}
+</script>
+<style></style>
