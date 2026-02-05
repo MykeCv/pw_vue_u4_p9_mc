@@ -11,7 +11,11 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeView,
+    meta: {
+      requiereAutorizacion: true,
+      esPublica: false,
+    }
   },
   {
     path: '/about',
@@ -19,37 +23,65 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue'),
+    meta: {
+      requiereAutorizacion: false,
+      esPublica: false,
+    }
   },
   {
     path: '/consultartodos',
     name: 'consultartodos',
-    component: ConsultarTodosView
+    component: ConsultarTodosView,
+    meta: {
+      requiereAutorizacion: true,
+      esPublica: false,
+    }
   },
   {
     path: '/consultarPorId',
     name: 'consultarPorId',
-    component: ConsultarPorIdView
+    component: ConsultarPorIdView,
+    meta: {
+      requiereAutorizacion: true,
+      esPublica: false,
+    }
   },
   {
     path: '/guardar',
     name: 'guardar',
-    component: GuardarView
+    component: GuardarView,
+    meta: {
+      requiereAutorizacion: false,
+      esPublica: false,
+    }
   },
   {
     path: '/actualizar',
     name: 'actualizar',
-    component: ActualizarView
+    component: ActualizarView,
+    meta: {
+      requiereAutorizacion: true,
+      esPublica: false,
+    }
   },
   {
     path: '/actualizarParcial',
     name: 'actualizarParcial',
-    component: ActualizarParcialView
+    component: ActualizarParcialView,
+    meta: {
+      requiereAutorizacion: false,
+      esPublica: false,
+    }
   },
   {
     path: '/borrar',
     name: 'borrar',
-    component: BorrarView
+    component: BorrarView,
+    meta: {
+      requiereAutorizacion: true,
+      esPublica: false,
+    }
   },
 
 ]
@@ -57,6 +89,19 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
+})
+
+/* Configuracion del Guardian */
+router.beforeEach((to, from, next)=>{
+  if(to.meta.requiereAutorizacion){
+    /*Le envio a una pagina de login*/ 
+    console.log("Redirigiendo al LOGIN");
+    
+  }else{
+    /*Le dejo que pase sin validación */
+    console.log("Pase Libre");
+    next();
+  }
 })
 
 export default router
