@@ -13,6 +13,23 @@
   <router-view/>
 </template>
 
+<script>
+import { obtenerTokenFachada } from '@/clients/AuthClient';
+export default {
+  async mounted() {
+    try {
+       await obtenerTokenFachada();
+       const test = localStorage.getItem("token");
+       console.log(test);
+       
+      
+    } catch (error) {
+      console.error("Error al obtener el token:", error);
+    }
+  },
+}
+</script>
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

@@ -2,42 +2,13 @@
   <div>
     <h2>Actualizar Estudiante</h2>
 
-    <input
-      v-model="id"
-      type="number"
-      placeholder="ID del estudiante"
-    />
-
-    <input
-      v-model="estudiante.nombre"
-      placeholder="Nombre"
-      type="text"
-    />
-
-    <input
-      v-model="estudiante.apellido"
-      placeholder="Apellido"
-      type="text"
-    />
-
-    <input
-      v-model="estudiante.genero"
-      placeholder="Género"
-      type="text"
-    />
-
-    <input
-      v-model="estudiante.provincia"
-      placeholder="Provincia"
-      type="text"
-    />
-
-    <input
-      v-model="estudiante.fechaNacimiento"
-      type="date"
-    />
-
-    <br /><br />
+    <input v-model="id" type="number" placeholder="ID del estudiante"/>
+    <input v-model="estudiante.nombre" placeholder="Nombre" type="text"/>
+    <input v-model="estudiante.apellido" placeholder="Apellido" type="text"/>
+    <input v-model="estudiante.genero" placeholder="Género" type="text"/>
+    <input v-model="estudiante.provincia" placeholder="Provincia" type="text"/>
+    <input v-model="estudiante.fechaNacimiento" type="date"/>
+    <br/><br/>
     <button @click="actualizar">Actualizar</button>
   </div>
 </template>
