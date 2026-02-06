@@ -6,8 +6,14 @@ import GuardarView from '../views/GuardarView.vue'
 import ActualizarView from '../views/ActualizarView.vue'
 import ActualizarParcialView from '../views/ActualizarParcialView.vue'
 import BorrarView from '../views/BorrarView.vue'
+import LoginView from '../views/LoginView.vue'
 
 const routes = [
+  {
+    path: '/login',
+    name: 'login',
+    component: LoginView
+  },
   {
     path: '/',
     name: 'home',
@@ -83,7 +89,6 @@ const routes = [
       esPublica: false,
     }
   },
-
 ]
 
 const router = createRouter({
@@ -92,12 +97,19 @@ const router = createRouter({
 })
 
 /* Configuracion del Guardian */
-router.beforeEach((to, from, next)=>{
-  if(to.meta.requiereAutorizacion){
-    /*Le envio a una pagina de login*/ 
-    console.log("Redirigiendo al LOGIN");
-    
-  }else{
+router.beforeEach((to, from, next) => {
+  if (to.meta.requiereAutorizacion) {
+    /*Le envio a una pagina de login*/
+    const estaAutenticado = localStorage.getItem("estaAutenticado", true);
+    if (!estaAutenticado) {
+      console.log("Redirigiendo al LOGIN");
+      next({ name: 'login' })
+    }
+    else{
+      next();
+    }
+
+  } else {
     /*Le dejo que pase sin validación */
     console.log("Pase Libre");
     next();
