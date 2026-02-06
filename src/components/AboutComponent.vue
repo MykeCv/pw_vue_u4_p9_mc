@@ -1,5 +1,6 @@
 <template>
     <div>
+        <h1>MATRICULAS UCE</h1>
         <button @click="consumirTodos()">ConsultarTodos</button>
         <button @click="consumirID()">Consultar por ID</button>
         <button>Guardar</button>

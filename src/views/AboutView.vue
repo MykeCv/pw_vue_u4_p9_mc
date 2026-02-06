@@ -1,7 +1,6 @@
 <template>
   <div class="about-container">
     <AboutComponent/>
-    <h1>MATRICULAS</h1>
   </div>
 </template>
 

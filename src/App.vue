@@ -31,6 +31,33 @@ export default {
 </script>
 
 <style>
+/*nav{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding: 14px 10px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+
+nav a{
+  color: #111827;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+nav a:hover{
+  background: #f3f4f6;
+}
+
+nav a.router-link-exact-active{
+  background: #e5f0ff;
+  color: #1d4ed8;
+}*/
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -52,3 +79,4 @@ nav a.router-link-exact-active {
   color: #42b983;
 }
 </style>
+
